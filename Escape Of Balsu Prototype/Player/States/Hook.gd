@@ -1,7 +1,6 @@
 extends Node
 
 var hook_target = null
-var rotation_degree = 0
 
 func enter(host, _arguments):
 	print("hooking")
@@ -10,7 +9,6 @@ func enter(host, _arguments):
 			"state": host.States["IDLE"]
 		}
 	hook_target = _arguments["hook_target"]
-	host.tip.
 	execute(host)
 
 func execute(host, _delta = 0.016666):
@@ -23,5 +21,4 @@ func execute(host, _delta = 0.016666):
 		}
 
 func exit(_host):
-	
-	!_host.gravityDirection 
+	pass

@@ -14,6 +14,7 @@ var hooked = false
 func _shoot(dir):
 	direction = dir.normalized()	# Normalize the direction and save it
 	flying = true					# Keep track of our current scan
+	tip.look_at(get_global_mouse_position())
 
 # release() the chain
 func _release():
