@@ -4,23 +4,36 @@ extends KinematicBody2D
 export var velocity = Vector2(0,0)
 export var slowDownWeight = 0.2
 export var gravityDirection = Vector2.UP
+
+const StateManagerReference = preload("res://Utils/StateManager.gd")
+
 const SPEED = 600
+const HOOK_SPEED = 20
 const GRAVITY = 40
 const JUMPFORCE = -1100
 
+onready var States = {
+	"IDLE": load("res://Player/States/Idle.gd").new(),
+	"MOVE": load("res://Player/States/Move.gd").new(),
+	"JUMP": load("res://Player/States/Jump.gd").new(),
+	"HOOK": load("res://Player/States/Hook.gd").new(),
+}
+onready var StateManager = StateManagerReference.new(self, States, "IDLE")
+onready var hook = $Hook
+
+var hook_target
+
+func _ready():
+	pass
+
 # Essentially like Update() in Unity, updates 60fps
-# warning-ignore:unused_argument
 func _physics_process(delta):
-	if Input.is_action_pressed("right"): # If D or RIGHTARROW, go right
-		velocity.x = SPEED
-	if Input.is_action_pressed("left"): # If A or LEFTARROW, go left
-		velocity.x = -SPEED
-	
-	velocity.y = velocity.y + GRAVITY # Gravity
-	
-	if Input.is_action_just_pressed("jump") && is_on_floor(): # If W/SPACE, jump
-		velocity.y = JUMPFORCE
-	
-	velocity = move_and_slide(velocity, gravityDirection) # Storing movement and gravity as velocity(x,y)
-	
-	velocity.x = lerp(velocity.x,0,slowDownWeight) # Subtle slide when stopping
+	StateManager._handle_state(delta)
+
+func _on_hook_collision(_tip_position):
+	StateManager.change_state({
+		"state": States["HOOK"],
+		"arguments": {
+			"hook_target": _tip_position
+		}
+	})
