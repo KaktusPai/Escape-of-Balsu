@@ -16,11 +16,6 @@ points = PoolVector2Array( 0, 0, 136, 0, 136, 136, 0, 136 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -34,12 +29,11 @@ points = PoolVector2Array( 0, 0, 136, 0, 136, 136, 0, 136 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 414.402, 398.301 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 6.55618, -315.307 )
-scale = Vector2( 2, 2 )
+position = Vector2( 0, -180 )
 current = true
+zoom = Vector2( 2, 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -57,4 +51,4 @@ __meta__ = {
 tile_set = SubResource( 2 )
 cell_size = Vector2( 136, 136 )
 format = 1
-tile_data = PoolIntArray( 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0 )
+tile_data = PoolIntArray( 131078, 0, 0, 131079, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0 )
