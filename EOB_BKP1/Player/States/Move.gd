@@ -1,7 +1,7 @@
 extends Node
 
 func enter(host, _arguments):
-	print("moving")
+	#print("moving")
 	execute(host)
 
 func execute(host, _delta = 0.016666):
@@ -15,12 +15,7 @@ func execute(host, _delta = 0.016666):
 			"state": host.States["IDLE"]
 		}
 	# Moving left and right
-	if Input.is_action_pressed("right"): # If D or RIGHTARROW, go right
-		# Velocity direction is changed from x to y when walking on walls 
-		host.velocity.x = host.speed
-
-	if Input.is_action_pressed("left"): # If A or LEFTARROW, go left
-		host.velocity.x = -host.speed
+	host.rotating_walk()
 		
 	# Shooting and releasing hook
 	if Input.is_action_just_pressed("fire_hook"):
@@ -30,8 +25,7 @@ func execute(host, _delta = 0.016666):
 		host.hook._release()
 		
 	# Gravity
-	host.velocity.y = host.velocity.y + host.gravity # Gravity
-	host.velocity = host.move_and_slide(host.velocity, host.gravityDirection)
+	host.rotating_gravity()
 
 func exit(_host):
 	pass

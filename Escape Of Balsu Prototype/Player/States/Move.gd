@@ -18,6 +18,7 @@ func execute(host, _delta = 0.016666):
 		host.velocity.x = host.SPEED
 	if Input.is_action_pressed("left"): # If A or LEFTARROW, go left
 		host.velocity.x = -host.SPEED
+		
 	host.velocity.y = host.velocity.y + host.GRAVITY # Gravity
 	host.velocity = host.move_and_slide(host.velocity, host.gravityDirection)
 

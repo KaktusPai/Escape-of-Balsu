@@ -7,6 +7,7 @@ const SPEED = 50
 onready var tip = $Tip
 
 var direction
+var directionDegrees
 var hook_position = Vector2(0, 0)
 var flying = false
 var hooked = false
@@ -14,7 +15,8 @@ var hooked = false
 func _shoot(dir):
 	direction = dir.normalized()	# Normalize the direction and save it
 	flying = true					# Keep track of our current scan
-	tip.look_at(get_global_mouse_position())
+	directionDegrees = rad2deg(direction.angle())
+	tip.rotation_degrees = directionDegrees # Rotate the tip
 
 # release() the chain
 func _release():

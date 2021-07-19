@@ -20,4 +20,6 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Hook" parent="." instance=ExtResource( 3 )]
+rotation = 3.14159
+z_index = 1
 [connection signal="hook_collision" from="Hook" to="." method="_on_hook_collision"]

@@ -1,8 +1,14 @@
 extends Node
 
 func enter(host, _arguments):
-	print("jumping")
-	host.velocity.y = host.velocity.y + host.gravity # Gravity
+	#print("jumping")
+	if host.gravityDirection == Vector2.UP or host.gravityDirection == Vector2.DOWN:
+		host.velocity.y = host.jumpForce
+		host.velocity.y = host.velocity.y + host.gravity # Gravity
+	elif host.gravityDirection == Vector2.LEFT or host.gravityDirection == Vector2.RIGHT:
+		host.velocity.x = host.jumpForce
+		host.velocity.x = host.velocity.x + host.gravity # Gravity
+	
 	host.velocity = host.move_and_slide(host.velocity, host.gravityDirection)
 	execute(host)
 
@@ -12,11 +18,8 @@ func execute(host, _delta = 0.016666):
 			"state": host.States["IDLE"]
 		}
 	
-	if Input.is_action_pressed("right"): # If D or RIGHTARROW, go right
-		host.velocity.x = host.speed
-
-	if Input.is_action_pressed("left"): # If A or LEFTARROW, go left
-		host.velocity.x = -host.speed
+	# Move while jumping
+	host.rotating_walk()
 		
 	# Shooting and releasing hook
 	if Input.is_action_just_pressed("fire_hook"):
@@ -26,8 +29,7 @@ func execute(host, _delta = 0.016666):
 		host.hook._release()
 	
 	# Gravity
-	host.velocity.y = host.velocity.y + host.gravity # Gravity
-	host.velocity = host.move_and_slide(host.velocity, host.gravityDirection)
+	host.rotating_gravity()
 
 func exit(_host):
 	pass

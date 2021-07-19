@@ -1,7 +1,7 @@
 extends Node
 
 func enter(host, _arguments):
-	print("idling")
+	#print("idling")
 	execute(host)
 
 func execute(host, _delta = 0.016666):
@@ -22,10 +22,13 @@ func execute(host, _delta = 0.016666):
 	if Input.is_action_just_released("fire_hook"):
 		host.hook._release()
 	
+	if host.gravityDirection == Vector2.UP or host.gravityDirection == Vector2.DOWN:
+		host.velocity.x = lerp(host.velocity.x, 0, host.slowDownWeight)
+	elif host.gravityDirection == Vector2.RIGHT or host.gravityDirection == Vector2.LEFT:
+		host.velocity.y = lerp(host.velocity.y, 0, host.slowDownWeight)
+	
 	# Gravity
-	host.velocity.y = host.velocity.y + host.gravity # Gravity
-	host.velocity = host.move_and_slide(host.velocity, host.gravityDirection)
-	host.velocity.y = lerp(host.velocity.x, 0, host.slowDownWeight)
+	host.rotating_gravity()
 
 func exit(_host):
 	pass

@@ -4,15 +4,13 @@ extends KinematicBody2D
 export var velocity = Vector2(0,0)
 export var slowDownWeight = 0.2
 export var gravityDirection = Vector2.UP
+export var facingDirInt = 0 # 0 = DOWN 1 = UP 2 = LEFT 3 = RIGHT
 export var gravity = 40
-export var velocityAxisX = 0
-export var velocityAxisY = 0
-var standardAxis = false
 
 const StateManagerReference = preload("res://Utils/StateManager.gd")
 
 export var speed = 600
-const HOOK_FLY_SPEED = 30
+export var flyingWithHookSpeed = 30
 export var jumpForce = -1100
 
 onready var States = {
@@ -42,3 +40,27 @@ func _on_hook_collision(_tip_position):
 		}
 	})
 
+func rotating_gravity():
+	if gravityDirection == Vector2.UP or gravityDirection == Vector2.DOWN:
+		velocity.y = velocity.y + gravity # Gravity Y axis ^v
+	elif gravityDirection == Vector2.LEFT or gravityDirection == Vector2.RIGHT:
+		velocity.x = velocity.x + gravity # Gravity X axis <>
+	velocity = move_and_slide(velocity, gravityDirection)
+
+func rotating_walk():
+	if Input.is_action_pressed("right"): # If D or RIGHTARROW, go right
+		if gravityDirection == Vector2.UP or gravityDirection == Vector2.DOWN:
+			velocity.x = speed
+		elif gravityDirection == Vector2.LEFT or gravityDirection == Vector2.RIGHT:
+			velocity.y = -speed
+	if Input.is_action_pressed("left"): # If A or LEFTARROW, go left
+		if gravityDirection == Vector2.UP or gravityDirection == Vector2.DOWN:
+			velocity.x = -speed
+		elif gravityDirection == Vector2.LEFT or gravityDirection == Vector2.RIGHT:
+			velocity.y = speed
+
+func reverse_movement_variables():
+	gravity = -gravity # Reversing gravity by making it negative
+	jumpForce = -jumpForce # Reverse jumpforce
+	speed = -speed # Reverse speed
+	print("reversing: ", gravityDirection)
