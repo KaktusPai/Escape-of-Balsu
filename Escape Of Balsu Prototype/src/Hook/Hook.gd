@@ -14,7 +14,7 @@ var flying = false
 var hooked = false
 # Distance to collision
 var initialDistance 
-var currentDistance 
+var currentDistance = 0
 var targetPosition 
 
 func _shoot(dir):

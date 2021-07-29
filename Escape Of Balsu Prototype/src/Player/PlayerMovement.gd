@@ -13,10 +13,10 @@ export var gravity = 40
 # States
 const StateManagerReference = preload("res://Utils/StateManager.gd")
 onready var States = {
-	"IDLE": load("res://Player/States/Idle.gd").new(),
-	"MOVE": load("res://Player/States/Move.gd").new(),
-	"JUMP": load("res://Player/States/Jump.gd").new(),
-	"HOOK": load("res://Player/States/FlyingToHook.gd").new(),
+	"IDLE": load("res://src/Player/States/Idle.gd").new(),
+	"MOVE": load("res://src/Player/States/Move.gd").new(),
+	"JUMP": load("res://src/Player/States/Jump.gd").new(),
+	"HOOK": load("res://src/Player/States/FlyingToHook.gd").new(),
 }
 onready var StateManager = StateManagerReference.new(self, States, "IDLE")
 onready var hook = $Hook
@@ -46,7 +46,10 @@ func _physics_process(delta):
 	if hook.hooked == true:
 		rotate_player_while_flying()
 	elif hook.hooked == false and hook.flying == false:
-		rotation_degrees = targetRotation
+		if hook.currentDistance < 100.0:
+			rotation_degrees = targetRotation
+		else:
+			rotation_degrees = initialRotation
 
 # PLAYER HEALTH
 func damage(amount):
