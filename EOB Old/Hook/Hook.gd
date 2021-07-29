@@ -2,13 +2,13 @@ extends Node2D
 
 signal hook_collision
 
-var hookSpeed = 50
+const SPEED = 50
 
 onready var tip = $Tip
 
 var direction
 var directionDegrees
-var hookPosition = Vector2(0, 0)
+var hook_position = Vector2(0, 0)
 var flying = false
 var hooked = false
 
@@ -17,7 +17,6 @@ func _shoot(dir):
 	flying = true					# Keep track of our current scan
 	directionDegrees = rad2deg(direction.angle())
 	tip.rotation_degrees = directionDegrees # Rotate the tip
-	print("TIPDIR ", directionDegrees)
 
 # release() the chain
 func _release():
@@ -27,13 +26,12 @@ func _release():
 
 func _physics_process(_delta):
 	if flying:
-		var has_collided = tip.move_and_collide(direction * hookSpeed)
+		var has_collided = tip.move_and_collide(direction * SPEED)
 		if has_collided:
 			hooked = true	# Got something!
 			flying = false	# Not flying anymore
-			hookPosition = tip.global_position
+			hook_position = tip.global_position
 			emit_signal("hook_collision", tip.global_position)
-		#print(HOOK_SPEED)
 	elif hooked:
-		tip.global_position = hookPosition
+		tip.global_position = hook_position
 

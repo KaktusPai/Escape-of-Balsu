@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Escape of Balsu v1"
+config/name="Legend Of Balsu Prototype"
 run/main_scene="res://Levels/LevelMain.tscn"
 config/icon="res://icon.png"
 
