@@ -68,7 +68,6 @@ func _set_health(value):
 		if health == 0:
 			kill()
 			emit_signal("killed")
-			effectsAnimation.play("damage")
 
 # HOOK-PLAYER LOGIC
 func _on_hook_collision(_tip_position):
@@ -127,6 +126,7 @@ func reverse_movement_variables():
 # BULLET DETECTION
 func _on_Area2D_area_entered(area):
 	if area.name == "BulletArea":
-		damage(10)
+		damage(5)
+		effectsAnimation.play("damage")
 		area.get_parent().queue_free()
 		print(health)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/OtherTiles_v0.1.png-e26b5182747fa4c6887d046debe28201.stex"
+path="res://.import/Player_v0.2.png-7618783b2b1b7ba8db4645a917161eeb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Art Assets/OtherTiles_v0.1.png"
-dest_files=[ "res://.import/OtherTiles_v0.1.png-e26b5182747fa4c6887d046debe28201.stex" ]
+source_file="res://Art Assets/Player_v0.2.png"
+dest_files=[ "res://.import/Player_v0.2.png-7618783b2b1b7ba8db4645a917161eeb.stex" ]
 
 [params]
 

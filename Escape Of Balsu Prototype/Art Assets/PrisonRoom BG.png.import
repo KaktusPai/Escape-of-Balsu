@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HPBarProgress.png-230ae06d02f31f9147ff598fb6bcd939.stex"
+path="res://.import/PrisonRoom BG.png-9f8d71b0da1aaa52e7e41a55b71c30ba.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Art Assets/HPBarProgress.png"
-dest_files=[ "res://.import/HPBarProgress.png-230ae06d02f31f9147ff598fb6bcd939.stex" ]
+source_file="res://Art Assets/PrisonRoom BG.png"
+dest_files=[ "res://.import/PrisonRoom BG.png-9f8d71b0da1aaa52e7e41a55b71c30ba.stex" ]
 
 [params]
 

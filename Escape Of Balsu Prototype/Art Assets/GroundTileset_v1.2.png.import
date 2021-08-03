@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BossEnemy.png-87389e0f7c0fac1e7512a39291fc5aab.stex"
+path="res://.import/GroundTileset_v1.2.png-6acb8111763201708d3f4ad5627182f8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Art Assets/BossEnemy.png"
-dest_files=[ "res://.import/BossEnemy.png-87389e0f7c0fac1e7512a39291fc5aab.stex" ]
+source_file="res://Art Assets/GroundTileset_v1.2.png"
+dest_files=[ "res://.import/GroundTileset_v1.2.png-6acb8111763201708d3f4ad5627182f8.stex" ]
 
 [params]
 

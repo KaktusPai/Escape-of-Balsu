@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HPBarOver.png-f9236555c38c6ed9836ef604ff857b13.stex"
+path="res://.import/BossEnemy.png-9c8e52d91170ababa1011ff1171e0057.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Art Assets/HPBarOver.png"
-dest_files=[ "res://.import/HPBarOver.png-f9236555c38c6ed9836ef604ff857b13.stex" ]
+source_file="res://Art Assets/BossEnemy.png"
+dest_files=[ "res://.import/BossEnemy.png-9c8e52d91170ababa1011ff1171e0057.stex" ]
 
 [params]
 
