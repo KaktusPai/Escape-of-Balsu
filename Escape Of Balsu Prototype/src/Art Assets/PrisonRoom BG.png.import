@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player_v0.3.png-58947ed18642e7c79f6f15e1743e65d7.stex"
+path="res://.import/PrisonRoom BG.png-c5edcdc5c268f75c4c596eb13aea4b14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Player_v0.3.png"
-dest_files=[ "res://.import/Player_v0.3.png-58947ed18642e7c79f6f15e1743e65d7.stex" ]
+source_file="res://src/Art Assets/PrisonRoom BG.png"
+dest_files=[ "res://.import/PrisonRoom BG.png-c5edcdc5c268f75c4c596eb13aea4b14.stex" ]
 
 [params]
 

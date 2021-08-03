@@ -41,4 +41,3 @@ func _physics_process(_delta):
 		#print(HOOK_SPEED)
 	elif hooked:
 		tip.global_position = hookPosition
-

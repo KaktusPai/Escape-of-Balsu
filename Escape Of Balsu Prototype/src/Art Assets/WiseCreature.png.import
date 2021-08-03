@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HPBarOver.png-bed423a8c3fe06eba3bcf2df4e53c84a.stex"
+path="res://.import/WiseCreature.png-58f1b9a99a820f45226e01c5ce3836bc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/HPBarOver.png"
-dest_files=[ "res://.import/HPBarOver.png-bed423a8c3fe06eba3bcf2df4e53c84a.stex" ]
+source_file="res://src/Art Assets/WiseCreature.png"
+dest_files=[ "res://.import/WiseCreature.png-58f1b9a99a820f45226e01c5ce3836bc.stex" ]
 
 [params]
 

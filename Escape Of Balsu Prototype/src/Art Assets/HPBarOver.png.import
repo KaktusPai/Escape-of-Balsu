@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Gradient_Background_v1.png-c4033319e52f6114e4909526df4a31ac.stex"
+path="res://.import/HPBarOver.png-f9236555c38c6ed9836ef604ff857b13.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Gradient_Background_v1.png"
-dest_files=[ "res://.import/Gradient_Background_v1.png-c4033319e52f6114e4909526df4a31ac.stex" ]
+source_file="res://src/Art Assets/HPBarOver.png"
+dest_files=[ "res://.import/HPBarOver.png-f9236555c38c6ed9836ef604ff857b13.stex" ]
 
 [params]
 

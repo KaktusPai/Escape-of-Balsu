@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Hook_v0.2.png-03eeebf4a32770463874e613adeafa16.stex"
+path="res://.import/Player_v0.3.png-5782091826f2a65e503050f4ad214915.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/Hook_v0.2.png"
-dest_files=[ "res://.import/Hook_v0.2.png-03eeebf4a32770463874e613adeafa16.stex" ]
+source_file="res://src/Art Assets/Player_v0.3.png"
+dest_files=[ "res://.import/Player_v0.3.png-5782091826f2a65e503050f4ad214915.stex" ]
 
 [params]
 

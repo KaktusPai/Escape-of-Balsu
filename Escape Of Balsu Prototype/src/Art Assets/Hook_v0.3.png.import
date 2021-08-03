@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GroundTileset_v1.2.png-6acb8111763201708d3f4ad5627182f8.stex"
+path="res://.import/Hook_v0.3.png-5f004623c882799c9579e193eb2d741d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/GroundTileset_v1.2.png"
-dest_files=[ "res://.import/GroundTileset_v1.2.png-6acb8111763201708d3f4ad5627182f8.stex" ]
+source_file="res://src/Art Assets/Hook_v0.3.png"
+dest_files=[ "res://.import/Hook_v0.3.png-5f004623c882799c9579e193eb2d741d.stex" ]
 
 [params]
 

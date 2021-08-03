@@ -58,7 +58,7 @@ func damage(amount):
 		_set_health(health - amount)
 
 func kill():
-	pass
+	get_tree().reload_current_scene()
 
 func _set_health(value):
 	var prev_health = health
@@ -123,5 +123,10 @@ func reverse_movement_variables():
 	jumpForce = -jumpForce # Reverse jumpforce
 	speed = -speed # Reverse speed
 	print("reversing: ", gravityDirection)
-	
 
+# BULLET DETECTION
+func _on_Area2D_area_entered(area):
+	if area.name == "BulletArea":
+		damage(10)
+		area.get_parent().queue_free()
+		print(health)

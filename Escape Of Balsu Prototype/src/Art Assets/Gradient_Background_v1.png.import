@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BossEnemy.png-9c8e52d91170ababa1011ff1171e0057.stex"
+path="res://.import/Gradient_Background_v1.png-69fffdc6872a40676062182238776383.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art Assets/BossEnemy.png"
-dest_files=[ "res://.import/BossEnemy.png-9c8e52d91170ababa1011ff1171e0057.stex" ]
+source_file="res://src/Art Assets/Gradient_Background_v1.png"
+dest_files=[ "res://.import/Gradient_Background_v1.png-69fffdc6872a40676062182238776383.stex" ]
 
 [params]
 
