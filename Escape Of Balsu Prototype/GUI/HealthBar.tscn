@@ -5,7 +5,6 @@
 [ext_resource path="res://Art Assets/HPBarOver.png" type="Texture" id=3]
 [ext_resource path="res://GUI/HealthBar.gd" type="Script" id=4]
 
-
 [node name="HealthBar" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,7 +18,8 @@ anchor_right = 0.367188
 anchor_bottom = 0.278333
 margin_right = 974.0
 margin_bottom = 133.0
-value = 100.0
+max_value = 130.0
+value = 130.0
 texture_under = ExtResource( 1 )
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
@@ -33,7 +33,8 @@ anchor_right = 0.367188
 anchor_bottom = 0.278333
 margin_right = 974.0
 margin_bottom = 133.0
-value = 100.0
+max_value = 130.0
+value = 130.0
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
 tint_progress = Color( 0.65098, 0.870588, 0.568627, 1 )

@@ -98,3 +98,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_up" from="Menu/CenterRow/Buttons/Play" to="." method="_on_Play_button_up"]
+[connection signal="button_up" from="Menu/CenterRow/Buttons/Quit" to="." method="_on_Quit_button_up"]

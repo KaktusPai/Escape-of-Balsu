@@ -29,7 +29,7 @@ var hook_target
 # Player health
 signal killed()
 signal health_updated(health)
-export (float) var maxHealth = 100
+export (float) var maxHealth = 130
 onready var health = maxHealth setget _set_health
 onready var invulnerabilityTimer = $InvulnerabilityTimer
 onready var effectsAnimation = $EffectsAnimation
@@ -126,7 +126,7 @@ func reverse_movement_variables():
 # BULLET DETECTION
 func _on_Area2D_area_entered(area):
 	if area.name == "BulletArea":
-		damage(5)
+		damage(10)
 		effectsAnimation.play("damage")
 		area.get_parent().queue_free()
 		print(health)

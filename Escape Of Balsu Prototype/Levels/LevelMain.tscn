@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Art Assets/Gradient_Background_v1.png" type="Texture" id=1]
 [ext_resource path="res://src/Player/PlayerScene.tscn" type="PackedScene" id=2]
@@ -10,13 +10,45 @@
 [ext_resource path="res://src/AddRemoveTiles.gd" type="Script" id=8]
 [ext_resource path="res://src/NormalEnemy/NormalEnemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/TitleScreen/TitleScreen.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/GameFinished.gd" type="Script" id=11]
+[ext_resource path="res://Art Assets/Plant.png" type="Texture" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 326.382, 194.709 )
 
 [node name="LevelMain" type="Node2D"]
+
+[node name="Plant" type="Sprite" parent="."]
+position = Vector2( -217.208, -5030.02 )
+scale = Vector2( 0.690011, 0.535594 )
+texture = ExtResource( 12 )
+
+[node name="Plant3" type="Sprite" parent="."]
+position = Vector2( 796.567, -943.018 )
+scale = Vector2( 1.15879, 0.535594 )
+texture = ExtResource( 12 )
+
+[node name="Plant4" type="Sprite" parent="."]
+position = Vector2( -1344.42, 1194.18 )
+rotation = 1.57079
+scale = Vector2( 1.31861, 0.609464 )
+texture = ExtResource( 12 )
+
+[node name="Plant5" type="Sprite" parent="."]
+position = Vector2( 1023.96, 1948.06 )
+scale = Vector2( 0.386566, 0.609464 )
+texture = ExtResource( 12 )
+
+[node name="Plant2" type="Sprite" parent="."]
+position = Vector2( 1405.74, -5468.34 )
+rotation = 3.14159
+scale = Vector2( 0.778291, 0.379584 )
+texture = ExtResource( 12 )
 
 [node name="Player" parent="." groups=[
 "actors",
 ] instance=ExtResource( 2 )]
-position = Vector2( -2790.47, -3875.39 )
+position = Vector2( -2741.35, -3874.35 )
 scale = Vector2( 0.9, 0.9 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -88,10 +120,10 @@ rotation = -1.57079
 shootDelay = 1.9
 
 [node name="NormalEnemy4" parent="." instance=ExtResource( 9 )]
-position = Vector2( 2197.89, -4974.53 )
+position = Vector2( 2197.89, -4990.49 )
 rotation = -1.57079
 shootDelay = 0.7
-shootRangeModifier = 1.5
+shootRangeModifier = 1.7
 
 [node name="NormalEnemy5" parent="." instance=ExtResource( 9 )]
 position = Vector2( -131.794, -3727.27 )
@@ -137,6 +169,17 @@ shootRangeModifier = 0.9
 
 [node name="BossEnemy" parent="." instance=ExtResource( 5 )]
 position = Vector2( 7220, 3130 )
+
+[node name="GameFinished" type="Area2D" parent="."]
+position = Vector2( 7341.43, -1853.47 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameFinished"]
+shape = SubResource( 1 )
 [connection signal="health_updated" from="Player" to="HUD/HealthBar" method="_on_Player_health_updated"]
 [connection signal="makeDoor" from="BossEnemy" to="GroundTiles" method="_on_BossEnemy_makeDoor"]
 [connection signal="removeDoor" from="BossEnemy" to="GroundTiles" method="_on_BossEnemy_removeDoor"]
+[connection signal="area_entered" from="GameFinished" to="GameFinished" method="_on_GameFinished_area_entered"]
