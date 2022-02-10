@@ -16,9 +16,9 @@ public class PlayerLandState : PlayerGroundedState
         if (xInput != 0)
         {
             stateMachine.ChangeState(player.MoveState);
-        } else if (xInput > 0)
+        } else if (isAnimationFinished)
         {
-
+            stateMachine.ChangeState(player.IdleState);
         }
     }
 }
